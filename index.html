@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>RouteLeaf | Every Route. A Greener Choice.</title>
+
+
+    <!-- Leaflet CSS -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+    <!-- RouteLeaf CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+
+    <header>
+
+        <h1>🍃 RouteLeaf</h1>
+
+        <p>
+            Every Route. A Greener Choice.
+        </p>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN
+         ========================================== -->
+
+    <main>
+
+        <h2>
+            🌱 Plan a Greener Journey
+        </h2>
+
+
+        <!-- FROM -->
+
+        <label for="from">
+            📍 Starting Point
+        </label>
+
+        <input
+            type="text"
+            id="from"
+            placeholder="e.g. Kolkata"
+        >
+
+
+        <!-- TO -->
+
+        <label for="to">
+            🏁 Destination
+        </label>
+
+        <input
+            type="text"
+            id="to"
+            placeholder="e.g. UEM Kolkata"
+        >
+
+
+        <!-- TRANSPORT -->
+
+        <h3>
+            🚗 Choose Transport
+        </h3>
+
+        <select id="transport">
+
+            <option value="walk">
+                🚶 Walking
+            </option>
+
+            <option value="cycle">
+                🚲 Bicycle
+            </option>
+
+            <option value="bus" selected>
+                🚌 Bus
+            </option>
+
+            <option value="bike">
+                🏍️ Motorcycle
+            </option>
+
+            <option value="car">
+                🚗 Car
+            </option>
+
+        </select>
+
+
+        <!-- FIND ROUTE -->
+
+        <button onclick="findRoute()">
+
+            FIND ROUTE 🌱
+
+        </button>
+
+
+        <!-- ==========================================
+             RESULT
+             ========================================== -->
+
+        <div id="result"></div>
+
+
+        <!-- ==========================================
+             MAP
+             ========================================== -->
+
+        <div id="map"></div>
+
+
+        <!-- ==========================================
+             GREEN DASHBOARD
+             ========================================== -->
+
+        <section class="dashboard">
+
+            <h2>
+                🌱 Your RouteLeaf Impact
+            </h2>
+
+
+            <div class="dashboard-cards">
+
+
+                <!-- GREEN SCORE -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🌱
+                    </div>
+
+                    <div id="dashboardScore">
+                        0
+                    </div>
+
+                    <p>
+                        Green Score
+                    </p>
+
+                </div>
+
+
+                <!-- CO2 -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🌍
+                    </div>
+
+                    <div id="co2Saved">
+                        0.00 kg
+                    </div>
+
+                    <p>
+                        CO₂ Potentially Avoided
+                    </p>
+
+                </div>
+
+
+                <!-- JOURNEYS -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🛣️
+                    </div>
+
+                    <div id="tripCount">
+                        0
+                    </div>
+
+                    <p>
+                        Journeys
+                    </p>
+
+                </div>
+
+
+                <!-- ECO CHOICES -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🍃
+                    </div>
+
+                    <div id="ecoTrips">
+                        0
+                    </div>
+
+                    <p>
+                        Eco Choices
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ======================================
+                 GREEN POINTS
+                 ====================================== -->
+
+            <div class="points-card">
+
+                <div class="points-icon">
+                    🏆
+                </div>
+
+                <div>
+
+                    <div class="points-number" id="greenPoints">
+                        0
+                    </div>
+
+                    <div class="points-label">
+                        Green Points
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 ACHIEVEMENTS
+                 ====================================== -->
+
+            <div class="achievements">
+
+                <h3>
+                    🏆 Achievements
+                </h3>
+
+
+                <div
+                    id="achievementList"
+                    class="achievement-list"
+                ></div>
+
+            </div>
+
+
+            <!-- ======================================
+                 JOURNEY HISTORY
+                 ====================================== -->
+
+            <div class="history">
+
+                <h3>
+                    📜 Recent Journeys
+                </h3>
+
+
+                <div id="journeyHistory">
+
+                    <p class="empty-history">
+
+                        Your journeys will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Leaflet JavaScript -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+
+    <!-- RouteLeaf JavaScript -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
